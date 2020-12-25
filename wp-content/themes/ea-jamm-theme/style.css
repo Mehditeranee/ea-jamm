@@ -305,12 +305,15 @@ a.nav-link {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#return-to-top:hover {
-  background: rgba(0, 0, 0, 0.9);
-}
-#return-to-top:hover i {
-  color: #fff;
-  top: 5px;
+
+@media (hover: hover) and (pointer: fine){
+	#return-to-top:hover {
+		background: rgba(0, 0, 0, 0.9);
+	}
+	#return-to-top:hover i {
+		color: #fff;
+		top: 5px;
+	}
 }
 
 /** Première page de présentation **/
@@ -687,6 +690,8 @@ input.wpcf7-form-control.wpcf7-submit {
     font-family: 'Averta-Light';
 }
 
+/** FOOTER **/
+
 .footer {
     color: rgba(255, 255, 255, 0.7)
 }
@@ -694,6 +699,13 @@ input.wpcf7-form-control.wpcf7-submit {
 .footer a {
     color: #fff
 }
+
+p.copyright {
+    text-align: left;
+    margin: 10px 20px;
+}
+
+
 .gradient{
     background: rgb(43,43,43);
     background: linear-gradient(151deg, var(--orange) 0%, var(--pink) 35%,var(--primary) 100%) !important;
