@@ -1,4 +1,18 @@
 $(document).ready(function() {
+
+	(function($) {
+	    $.fn.clickToggle = function(func1, func2) {
+	        var funcs = [func1, func2];
+	        this.data('toggleclicked', 0);
+	        this.click(function() {
+	            var data = $(this).data();
+	            var tc = data.toggleclicked;
+	            $.proxy(funcs[tc], this)();
+	            data.toggleclicked = (tc + 1) % 2;
+	        });
+	        return this;
+	    };
+	}(jQuery));
 	
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 1){  
@@ -86,6 +100,20 @@ $(document).ready(function() {
 		});
 	});
 
+	$('.oeil').clickToggle(function functionName() {
+    //Change the attribute to text
+    var oeil = this.getElementsByTagName("use")[0];
+    oeil.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#eye_open');
+    $('#password').attr('type', 'text');
+    //$('.oeil use').attr("xlink:href", "#eye_open");
+	}, function () {
+	    //Change the attribute back to password
+	    var oeil = this.getElementsByTagName("use")[0];
+   		oeil.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#eye_closed');
+	    $('#password').attr('type', 'password');
+	    //$('.oeil use').attr("xlink:href", "#eye_close");
+	}
+	);
 
 });
 
