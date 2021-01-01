@@ -117,6 +117,7 @@ jQuery(document).ready(function($) {
         });
 
     $('form#register_form').on('submit', function (e) {
+        $('button#submit').prop('disabled',true);
         e.preventDefault();
     }).validate({
         // Specify validation rules
@@ -171,6 +172,9 @@ jQuery(document).ready(function($) {
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid
         submitHandler: function(form,event) {
+            $('button#submit').prop('disabled',true);
+            $('p.status', ctrl).css('color', 'black');
+
            // Perform AJAX login/register on form submit
            // $('form#register_form').on('submit', function (e) {
                 $('p.status', form).show().text(ajax_login_object.loadingmessage);
@@ -201,12 +205,13 @@ jQuery(document).ready(function($) {
 
                         
                         if (data.loggedin == true) {
-                            $('form#login_form p.status').css('color', 'black');
+                            $('p.status', ctrl).css('color', 'black');
                             document.location.href = ajax_login_object.redirecturl;
                         }
                         else
                         {
-                            $('form#login_form p.status').css('color', 'rgb(232, 93, 74)');
+                             $('button#submit').prop('disabled',false);
+                            $('p.status', ctrl).css('color', 'rgb(232, 93, 74)');
                             $('p.status', ctrl).text(data.message);
                         }
                     }
