@@ -29,11 +29,35 @@
 			<?php
 				if(function_exists('the_custom_logo'))
 				{
-					$custom_logo_id = get_theme_mod('custom_logo');
-					$logo = wp_get_attachment_image_src($custom_logo_id,'full');
+					if(is_front_page())
+					{
+						$custom_logo_id = get_theme_mod('custom_logo');
+						$logo = wp_get_attachment_image_src($custom_logo_id,'full');
+						?>
+						<img class="mb-3 mx-auto logo" src="<?php echo $logo[0] ?>" alt="logo" >	
+					<?php	
+
+					}
+					else
+					{
+						$custom_logo_id = get_theme_mod('custom_logo');
+						$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+								esc_url(home_url()),
+					            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+					                'class'    => 'mb-3 mx-auto logo',
+					                'alt'	   => 'logo'
+					            ) )
+					        );
+					    
+						/** $logo = wp_get_attachment_image_src($custom_logo_id,'full');**/
+						//return $html;
+						echo $html;   
+					}
+					
 				}
 			?>
-			<img class="mb-3 mx-auto logo" src="<?php echo $logo[0] ?>" alt="logo" >	
+
+		
 
 <svg id="subscription" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="width:0; height:0;"><g transform="translate(0,-952.36218)"><path style="width:0; height:0;font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:1;color:#f56c99;fill:#f56c99;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" d="M 12 7 C 10.666667 7 9.4383848 7.62412 8.53125 8.53125 C 7.6241152 9.43838 7 10.66667 7 12 L 7 70.96875 C 7 72.30375 7.6254774 73.5271 8.53125 74.4375 C 9.4370226 75.3479 10.660965 75.9994 12 76 L 24 76 L 24 87.96875 C 24 89.30375 24.625477 90.5271 25.53125 91.4375 C 26.437023 92.3479 27.660965 92.9994 29 93 L 88 93 C 89.329233 93 90.558647 92.37385 91.46875 91.46875 C 92.371766 90.57065 92.995509 89.3319 93 88 C 93.000035 87.989 93.000042 87.97875 93 87.96875 L 93 29 C 93 27.66667 92.375885 26.43838 91.46875 25.53125 C 90.561615 24.62392 89.333333 24 88 24 L 76 24 L 76 12 C 76 10.66667 75.375885 9.43838 74.46875 8.53125 C 73.561615 7.62412 72.333333 7 71 7 L 12 7 z M 12 9 L 71 9 C 71.666667 9 72.438385 9.34463 73.03125 9.9375 C 73.624115 10.53037 74 11.33333 74 12 L 74 24 L 29 24 C 27.666667 24 26.438385 24.62412 25.53125 25.53125 C 24.624115 26.43838 24 27.66667 24 29 L 24 74 L 12 74 C 11.320881 73.9997 10.527189 73.62395 9.9375 73.03125 C 9.3478111 72.43865 9 71.64765 9 70.96875 L 9 12 C 9 11.33333 9.3758848 10.53037 9.96875 9.9375 C 10.561615 9.34463 11.333333 9 12 9 z M 29 26 L 88 26 C 88.666667 26 89.438385 26.34463 90.03125 26.9375 C 90.624115 27.53037 91 28.33333 91 29 L 91 88 C 91.0028 88.6804 90.654452 89.44255 90.0625 90.03125 C 89.470548 90.62005 88.670767 91 88 91 L 29 91 C 28.320881 90.9997 27.527189 90.62395 26.9375 90.03125 C 26.347811 89.43865 26 88.64765 26 87.96875 L 26 29 C 26 28.33333 26.375885 27.53037 26.96875 26.9375 C 27.561615 26.34463 28.333333 26 29 26 z M 56 43 C 46.623009 43 39 50.623 39 60 C 39 66.3326 42.31923 71.91985 47.5 74.84375 A 1.0001 1.0001 0 1 0 48.5 73.125 C 43.95339 70.559 41 65.6336 41 60 C 41 51.7038 47.703837 45 56 45 C 64.05272 45 70.591181 51.323431 70.96875 59.28125 L 63.5 55.125 A 1.0077822 1.0077822 0 0 0 62.5 56.875 L 71.5 61.875 A 1.0001 1.0001 0 0 0 72.875 61.46875 L 77.875 52.46875 A 1.0001 1.0001 0 0 0 76.90625 50.96875 A 1.0001 1.0001 0 0 0 76.125 51.5 L 72.78125 57.46875 C 71.54566 49.300716 64.50849 43 56 43 z " transform="translate(0,952.36218)"/></g></svg>
 

@@ -236,6 +236,7 @@ a.nav-link {
 .logo{
     width:78px;
     margin-bottom: 0px !important;
+    height: auto;
 }
 
 #navbarNav {
