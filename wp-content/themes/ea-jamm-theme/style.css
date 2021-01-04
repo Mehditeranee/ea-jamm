@@ -241,9 +241,225 @@ a.nav-link {
 #navbarNav {
     text-align: center;
     justify-content: flex-end;
+/*    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;*/
+}
+
+.auth_header_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: min-content;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+.button.login {
+    margin-bottom: 4px;
+    padding: 3px 30px;
+    font-size: 1rem;
+    break-after: always;
+    width: max-content;
+}
+
+a.link.registration{
+	    font-size: 0.7rem;
+	    width: 100%;
+	    font-family: 'Averta-Light';
+}
+
+.button.account,.button.account:hover {
+    margin-bottom: 4px;
+    padding: 3px 30px;
+    font-size: 1rem;
+    break-after: always;
+    width: max-content;
+        background-color: white;
+    color: #1E256C;
+    border-left: 0.2px solid #1E256C;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: static;
+    float: none;
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.dropdown-menu .sub-menu {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown-menu{
+	left:auto;
+	right:0px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+ul#menu1 li a {
+	font-family: 'Averta-Light';
+	font-size: 14px;
+}
+
+ul#menu1 li{
+	padding-left:5px;
+}
+
+li.divider{
+	border-bottom: 1px solid #80808059;
+	padding-top: 9px;
+}
+
+li#logout{
+	padding: 8px 0px 0px;
+    text-align: center;
+        display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.menu-icon{
+     top: 9px;
+    right: 14px;
+        fill: #f56c99 !important;
+    width: 24px;
+    height: 24px;
+    padding-right:3px;
+}
+
+
+
+
+.nav-tabs .dropdown-menu,
+.nav-pills .dropdown-menu,
+.navbar .dropdown-menu {
+  margin-top: 0;
+}
+
+.navbar .sub-menu:before {
+  border-bottom: 7px solid transparent;
+  border-left: none;
+  border-right: 7px solid rgba(0, 0, 0, 0.2);
+  border-top: 7px solid transparent;
+  left: -7px;
+  top: 10px;
+}
+
+.navbar .sub-menu:after {
+  border-top: 6px solid transparent;
+  border-left: none;
+  border-right: 6px solid #fff;
+  border-bottom: 6px solid transparent;
+  left: 10px;
+  top: 11px;
+  left: -6px;
+}
+
+.navbar-nav li{
+	margin: 0px 15px;
+}
+
+.dropdown-toggle::after {
+    color: white;
+    border: 0px solid white;
+}
+
+li.dropdown {
+    list-style-type: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 66px;
+  padding: 15px 0px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 2px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Averta-Light';
+}
+
+span#nav-link-accountList-nav-line-1 {
+    font-size: 12px;
+    line-height: 14px;
+    height: 14px;
+    font-weight: 400;
+}
+
+
+span#nav-link-accountList-nav-line-2 {
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 700;
+   	font-family: 'Averta-Regular';
+}
+
+.nav-sprite-v1 .nav-sprite, .nav-sprite-v1 .nav-icon {
+ 
+}
+
+#down-arrow{
+	    width: 13px;
+    margin: 3px;
+    color:#1E256C;
+}
+
+#down-arrow-path{
+	fill: #1E256C;
 }
 
 @media (min-width: 992px){
+	#navbarNav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+
+	.auth_header_container{
+    margin: 0;
+}
+
 	li.nav-item {
     	margin: 0 40px 0 0;
     }
@@ -371,7 +587,8 @@ a.button{
     font-size: 20px;
     color: white;
     width: fit-content;
-    margin: 10px 3px;
+    margin: 10px 15px;
+
 }
 
 a.button.tarifs {
@@ -1025,7 +1242,7 @@ form#register_form {
     text-align: left;
 }
 
-form input{
+form#register_form, form#login_form, form#lostPasswordForm  input{
     font-family: 'Averta-Regular';
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
@@ -1124,7 +1341,7 @@ a.lost {
     margin-bottom: 8px;
 }
 
-button#submit {
+button#submit_auth {
     box-sizing: border-box;
     border: 2px solid transparent !important;
     margin-top: 16px;
@@ -1191,6 +1408,87 @@ button#submit {
 	}
 
 }
+
+/** Account page **/
+
+.account{
+	height: auto !important;
+}
+
+/** Account page : Mon abonnement **/
+
+section#mon-abonnement {
+    padding-top: 40px;
+}
+
+.content-abonnement{
+	display:flex;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+}
+
+a.button.accountpage {
+    padding: 2px 20px;
+    font-size: 1rem;
+}
+
+a.button.accountpage.discover {
+    background-color: white;
+    color: #1E256C;
+    border: 1px solid #8080804d;
+}
+
+.current-subscription {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #8080804a;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: 'Averta-Light';
+}
+
+.subscription-text {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+/** Account page : Tutoriels **/
+
+section#tutoriels {
+    padding-top: 40px;
+}
+
+.content-tutoriels{
+	display:flex;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+}
+
+/** Account page : mes informations **/
+
+section#mes-informations {
+	padding-top: 40px;
+    background-color: rgba(31,35,112,0.1);
+}
+
+.content-informations{
+	display:flex;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+}
+
+
 
 .gradient{
     background: rgb(43,43,43);

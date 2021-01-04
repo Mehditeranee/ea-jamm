@@ -49,7 +49,7 @@ if(!$user_ID)
 					<a class="lost" href="<?php echo wp_lostpassword_url(); ?>">Vous avez oublié votre mot de passe ?</a>
 					<p class="status"></p>
 					<div class="submit_button_list">
-						<button name="submit" id="submit" class="btn"><?php _e("Se connecter", "shorti"); ?></button>
+						<button name="submit" id="submit_auth" class="btn"><?php _e("Se connecter", "shorti"); ?></button>
 					</div>
 					<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
 

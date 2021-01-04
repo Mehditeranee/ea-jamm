@@ -14,6 +14,7 @@ function eajammtheme_menus(){
 
 	$locations = array(
 		'principal' => "Menu principal navbar",
+		'account'=>"Menu du compte",
 		'footer' => "Menu du footer"
 	);
 
@@ -312,6 +313,25 @@ function ajax_register(){
 
     die();
 }
+
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
+}
+
+add_filter( 'edit_profile_url', 'modify_profile_url', 10, 3 );
+
+function modify_profile_url( $url, $user_id, $scheme )
+{
+    // Makes the link to http://example.com/custom-profile
+    $url = site_url( '/profil' );
+    return $url;
+}
+
+
 
 
 ?>

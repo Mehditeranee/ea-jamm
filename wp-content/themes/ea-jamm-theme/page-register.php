@@ -86,7 +86,7 @@ if(!$user_ID)
 					<p class="status_password"></p>
 					<p class="status"></p>
 					<div class="submit_button_list">
-						<button name="submit" id="submit" class="btn"><?php _e("S'inscrire", "shorti"); ?></button>
+						<button name="submit" id="submit_auth" class="btn"><?php _e("S'inscrire", "shorti"); ?></button>
 					</div>
 					<?php wp_nonce_field('ajax-register-nonce', 'signonsecurity'); ?> 
 

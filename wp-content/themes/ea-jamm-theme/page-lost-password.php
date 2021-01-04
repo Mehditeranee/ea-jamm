@@ -59,7 +59,7 @@ if(!$user_ID)
 						do_action( 'lostpassword_form' ); 
 					?>
 						<div class="submit_button_list">
-							<button name="submit" id="submit" class="btn"><?php esc_attr_e('Réinitialiser mon mot de passe'); ?></button>
+							<button name="submit" id="submit_auth" class="btn"><?php esc_attr_e('Réinitialiser mon mot de passe'); ?></button>
 						</div>
 						<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
 

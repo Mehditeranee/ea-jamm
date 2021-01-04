@@ -79,7 +79,7 @@
 			?>
 			<div class="auth_header_container"> 
 				<li class="dropdown">
-					<a class="dropdown-toggle button account" href="<?php echo get_edit_profile_url($user_ID); ?>" role="button">
+					<a data-toggle="dropdown" class="dropdown-toggle button account" href="" role="button">
 						<span id="nav-link-accountList-nav-line-1" class="nav-line-1 nav-progressive-content">Bonjour <?php echo $first_name ?></span>
 						<span id="nav-link-accountList-nav-line-2">Compte<span class="nav-icon nav-arrow nav-white-arrow" style="visibility: visible;"><svg id="down-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path id="down-arrow-path" d="M76.739,33H23.261l-0.586,0.586c-3.94,3.94-3.94,8.646,0,12.586l20.153,20.153c1.915,1.916,4.463,2.971,7.172,2.971   s5.257-1.055,7.172-2.971l20.153-20.153c3.94-3.94,3.94-8.646,0-12.586L76.739,33z"/></g></svg></span></span>
 					</a>

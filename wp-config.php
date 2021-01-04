@@ -86,10 +86,10 @@ $table_prefix = 'wp_';
  *
  * @link https://fr.wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', true );
-@ini_set( 'display_errors',1 );
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+// @ini_set( 'display_errors',1 );
 
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 
