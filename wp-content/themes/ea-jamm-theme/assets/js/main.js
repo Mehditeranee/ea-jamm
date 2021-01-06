@@ -115,6 +115,91 @@ $(document).ready(function() {
 	}
 	);
 
+	// $('#recipeCarousel').carousel({
+	//   interval: 10000
+	// })
+
+	// $('.carousel .carousel-item').each(function(){
+	//     var minPerSlide = 1;
+	//     var next = $(this).next();
+	//     if (!next.length) {
+	//     next = $(this).siblings(':first');
+	//     }
+	//     //next.children(':first-child').clone().appendTo($(this));
+	    
+	//     for (var i=0;i<minPerSlide;i++) {
+	//         next=next.next();
+	//         if (!next.length) {
+	//         	next = $(this).siblings(':first');
+	//       	}
+	        
+	//         next.children(':first-child').clone().appendTo($(this));
+	//       }
+	// });
+
+	$(function(){
+		var cw = $('.img-fluid').width();
+		console.log(cw-(20/100));
+		$('.video-image').css({'height':cw/1.3+'px'});
+		var el = $('.video-image');
+		console.log( $ === jQuery, $.fn.jquery, el, el.height() );
+	});
+
+	$(function(){
+		var ch = $('.img-fluid').height();
+		$('.card-image').css({'height':ch+'px'});
+		
+	});
+
+	// var ptoggle = document.getElementById("project-toggler");
+	// function toggleSlide(x) {
+	// if (x.matches) { // If media query matches
+	// 	ptoggle.classList.toggle("slide");
+	// } else{
+	// 	ptoggle.classList.toggle("slide");
+	// }  }
+	// var x = window.matchMedia("(max-width: 700px)");
+	// toggleSlide(x); // Call listener function at run time
+	// x.addListener(toggleSlide); // Attach listener function on state 
+	// changes
+
+
+  $("#myCarousel").on("slide.bs.carousel", function(e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $(".carousel-item").length;
+
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+      var it = itemsPerSlide - (totalItems - idx);
+      for (var i = 0; i < it; i++) {
+        // append slides to end
+        if (e.direction == "left") {
+          $(".carousel-item")
+            .eq(i)
+            .appendTo(".carousel-inner");
+        } else {
+          $(".carousel-item")
+            .eq(0)
+            .appendTo($(this).find(".carousel-inner"));
+        }
+      }
+    }
+  });
+
+  $('.openMdl').on('click',function(){
+  		var url = $(this).closest('.card').find('a').attr("href");
+  		console.log(url);
+  		var video = document.getElementById('video');
+  		video.setAttribute('src', url);
+  });
+
+$('#exampleModalCenter').on('hidden.bs.modal', function () {
+	var video = $("#video").attr("src");
+	$("#video").attr("src","");
+	//$("#video").attr("src",video);
+});
+
 });
 
 

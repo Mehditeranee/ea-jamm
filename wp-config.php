@@ -88,8 +88,10 @@ $table_prefix = 'wp_';
  */
 define( 'WP_DEBUG', false );
 define( 'WP_DEBUG_LOG', false );
-define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_DISPLAY', false);
 // @ini_set( 'display_errors',1 );
+
+define( 'WP_MEMORY_LIMIT', '1024M' );
 
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 

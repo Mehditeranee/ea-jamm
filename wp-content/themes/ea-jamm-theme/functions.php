@@ -1,5 +1,5 @@
 <?php
-
+remove_filter( 'the_excerpt', 'wpautop' );
 function eajammtheme_theme_support(){
 	// Adds dynamic title tag support
 	add_theme_support('title_tag');

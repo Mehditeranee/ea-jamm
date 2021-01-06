@@ -239,6 +239,10 @@ a.nav-link {
     height: auto;
 }
 
+a.custom-logo-link {
+    margin: auto;
+}
+
 #navbarNav {
     text-align: center;
     justify-content: flex-end;
@@ -1465,7 +1469,11 @@ a.button.accountpage.discover {
 /** Account page : Tutoriels **/
 
 section#tutoriels {
-    padding-top: 40px;
+    padding: 40px 0px 40px 0px;
+}
+
+.account.tutoriels.row.align-items-center {
+    padding-left: 40px;
 }
 
 .content-tutoriels{
@@ -1474,6 +1482,200 @@ section#tutoriels {
 	align-content: center;
 	align-items: center;
 }
+/*
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}*/
+
+/* display 3 */
+/*@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33.333%);
+    }
+    
+    .carousel-inner .carousel-item-left.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}*/
+
+h4.video-title {
+    font-size: 15px;
+    margin-top: 20px;
+    height: 30px;
+}
+
+
+.card-body{
+	min-height: 38vh;
+	height: 100%;
+}
+
+p.video-description {
+    height: 50%;
+}
+
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+.carousel-inner .active + .carousel-item,
+.carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    position: relative;
+    /*transform: translate3d(0, 0, 0);*/
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+.carousel-item-next.carousel-item-left + .carousel-item,
+.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    /*transform: translate3d(-100%, 0, 0);*/
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+.carousel-item-prev.carousel-item-right + .carousel-item,
+.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+#carousel-item{
+	margin-right: auto !important;
+	transition: none;
+}
+
+.carousel-item-next, .carousel-item-prev {
+    position: absolute;
+    top: 0;
+}
+
+.carousel-control-prev {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+        width: 10%;
+}
+
+.carousel-control-next {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+        width: 10%;
+}
+
+.arrow-container{
+	height: 100%;
+	display:flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.arrow{
+
+     top: 9px;
+    right: 14px;
+    fill: #000000;
+    width: 55px;
+    height: 55px;
+
+}
+
+.arrow.left{
+	transform: rotate(180deg);
+}
+
+.play-btn{
+	width:35px;
+	position: relative;
+	top:-50%;
+	cursor:pointer;
+	transition:0.5s;
+}
+
+.card-image{
+	position: relative;
+   margin:0 auto;
+   text-align:center;
+   top:0;
+   left:0;
+   background-color:black;
+   cursor:pointer;
+}
+
+.card-title{
+	cursor:pointer;
+}
+
+/*.play-btn {
+    width: 35px;
+
+    cursor: pointer;
+    transition: 0.5s;
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+}*/
 
 /** Account page : mes informations **/
 
@@ -1489,7 +1691,10 @@ section#mes-informations {
 	align-items: center;
 }
 
-
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
 
 .gradient{
     background: rgb(43,43,43);
