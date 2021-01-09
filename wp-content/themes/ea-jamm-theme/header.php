@@ -108,13 +108,13 @@
 						<span id="nav-link-accountList-nav-line-2">Compte<span class="nav-icon nav-arrow nav-white-arrow" style="visibility: visible;"><svg id="down-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path id="down-arrow-path" d="M76.739,33H23.261l-0.586,0.586c-3.94,3.94-3.94,8.646,0,12.586l20.153,20.153c1.915,1.916,4.463,2.971,7.172,2.971   s5.257-1.055,7.172-2.971l20.153-20.153c3.94-3.94,3.94-8.646,0-12.586L76.739,33z"/></g></svg></span></span>
 					</a>
 					<ul class="dropdown-menu" id="menu1">
-						<li><a href="#"><svg class="menu-icon subscription" viewBox="0 0 24 24" data-icon="subscription" data-css-1nevli2="">
+						<li><a href="<?php echo get_edit_profile_url($user_ID); ?>/#mon-abonnement"><svg class="menu-icon subscription" viewBox="0 0 24 24" data-icon="subscription" data-css-1nevli2="">
 							<use xlink:href="#subscription"></use>
 						</svg>Mon abonnement</a></li>
-						<li><a href="#"><svg class="menu-icon tutorial" viewBox="0 0 24 24" data-icon="tutorial" data-css-1nevli2="">
+						<li><a href="<?php echo get_edit_profile_url($user_ID); ?>/#tutoriels"><svg class="menu-icon tutorial" viewBox="0 0 24 24" data-icon="tutorial" data-css-1nevli2="">
 							<use xlink:href="#tutorial"></use>
 						</svg>Tutoriels</a></li>
-						<li><a href="#"><svg class="menu-icon profile" viewBox="0 0 24 24" data-icon="profile" data-css-1nevli2="">
+						<li><a href="<?php echo get_edit_profile_url($user_ID); ?>/#mes-informations"><svg class="menu-icon profile" viewBox="0 0 24 24" data-icon="profile" data-css-1nevli2="">
 							<use xlink:href="#profile"></use>
 						</svg>Mes informations</a></li>
 						<li class="divider"></li>

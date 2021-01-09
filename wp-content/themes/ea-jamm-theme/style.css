@@ -1682,6 +1682,7 @@ p.video-description {
 section#mes-informations {
 	padding-top: 40px;
     background-color: rgba(31,35,112,0.1);
+    padding-bottom: 200px !important;
 }
 
 .content-informations{

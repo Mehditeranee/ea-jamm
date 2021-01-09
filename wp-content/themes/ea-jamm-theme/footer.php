@@ -1,3 +1,4 @@
+</div>
 <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
 	<footer class="footer text-center py-2 theme-bg-dark">
 
